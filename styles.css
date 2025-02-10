@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#hero {
+    background-color: #f8f9fa;
+    padding: 100px 0;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#hero p {
+    font-size: 1.5rem;
+}
+
+section {
+    padding: 60px 0;
+}
+
+h2 {
+    margin-bottom: 40px;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+}
+
+#skills .list-unstyled {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding: 0;
+}
+
+#skills li {
+    margin: 10px;
+}
+
+#skills img {
+    width: 50px; /* Adjust size */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+#skills img:hover {
+    transform: scale(1.1);
+}
+
+/* Align the icons and text properly */
+.iconify {
+    display: block;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Style the skill name */
+.iconify + span {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+    color: #333;
+}
+
+/* Hover effect for icons */
+.iconify:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Center the text and icon in each list item */
+.text-center {
+    text-align: center;
+}
+
+.carousel-inner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: flex-start;
+    transition: transform 1s ease-in-out; /* Smooth transition */
+}
+
+.carousel-item img {
+    transition: transform 0.5s ease;
+}
+
+/* Wrap the carousel items to create the infinite effect */
+.carousel-inner {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/* Automatically scroll to the next carousel item */
+#programming-carousel, #framework-carousel {
+    display: flex;
+    animation: scrollInfinite 20s linear infinite;
+}
+
+@keyframes scrollInfinite {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Adjust this based on the number of items */
+    }
+}
+
