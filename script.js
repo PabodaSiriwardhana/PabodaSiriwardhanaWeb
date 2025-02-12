@@ -104,3 +104,49 @@ particlesJS("particles-js", {
   },
   "retina_detect": true
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("load", handleScroll);
+});
+
+
+// Function to check if an element is in the viewport
+function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect();
+  return (
+      rect.top < window.innerHeight * 0.75 && 
+      rect.bottom >= 0
+  );
+}
+
+// Function to add 'visible' class when scrolled into view
+function handleScroll() {
+  // Check for skills section items
+  var skillItems = document.querySelectorAll(".skill-item");
+  skillItems.forEach((item) => {
+    if (isElementInViewport(item)) {
+      item.classList.add("visible");
+    }
+  });
+
+  // Check for education section items
+  
+  var container = document.getElementById("education-list");
+  var items = document.querySelectorAll(".timeline-item");
+
+  if (isElementInViewport(container)) {
+      container.classList.add("visible");
+  }
+
+  items.forEach((item) => {
+      if (isElementInViewport(item)) {
+          item.classList.add("visible");
+      }
+  });
+}
+
+// Add scroll event listener
+window.addEventListener("scroll", handleScroll);
+window.addEventListener("load", handleScroll);
+

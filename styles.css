@@ -1,11 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-}
-html, body{
-  height: 100%;
-  margin:0px;
-  padding: 0px;
-}
+
 
 #particles-js{
   background: #111111;
@@ -40,10 +33,6 @@ html, body{
 #about p{
     font-size: 1rem;
     text-align: justify;
-}
-
-section {
-    padding: 60px 0;
 }
 
 h2 {
@@ -360,47 +349,58 @@ h2 {
   100% { opacity: 1; }
 }
 
-@media (max-width: 1024px) {
-  #particles-js{height: 100vh;}
-}
-
-@media (max-width: 768px) {
-  #particles-js{height: 100vh;}
-  .responsive-heading { font-size: 2.5rem; }
-}
-
-@media (max-width: 480px) {
-  #particles-js{height: 100vh;}
-  .responsive-heading {font-size: 2.5rem !important; ; }
-  .heading-loader, .heading-card{padding: 5px 5px !important; font-size: 1.5rem !important;}
-}
-
 footer {
     background-color: #343a40;
     color: white;
     padding: 20px 0;
 }
 
-#skills .list-unstyled {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-    padding: 0;
+/* Initially hide skill items */
+.skill-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-#skills li {
-    margin: 10px;
+/* When the skill-item is in view */
+.skill-item.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
+/* Layout adjustments for row-wise display */
+#skills .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#skills .col-md-4 {
+  flex: 1;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Icon hover effect */
 #skills img {
-    width: 50px; /* Adjust size */
-    height: auto;
-    transition: transform 0.3s ease-in-out;
+  width: 50px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
 }
 
 #skills img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
+
+/* Center text and icons */
+.text-center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 
 /* Align the icons and text properly */
 .iconify {
@@ -429,9 +429,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-.carousel-inner {
+/* .carousel-inner {
     width: 100%;
     overflow: hidden;
 }
@@ -440,23 +441,19 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    transition: transform 1s ease-in-out; /* Smooth transition */
+    transition: transform 1s ease-in-out;
 }
 
 .carousel-item img {
     transition: transform 0.5s ease;
-}
+} */
 
-.text-center{
-  display: flex;
-  flex-direction: column;
-}
 
 /* Wrap the carousel items to create the infinite effect */
-.carousel-inner {
+/* .carousel-inner {
     display: flex;
     flex-wrap: nowrap;
-}
+} */
 
 /* Automatically scroll to the next carousel item */
 /* #programming-carousel1 {
@@ -470,15 +467,25 @@ footer {
   animation: scrollInfinite2 5s linear infinite;
 } */
 
+
+
 .carousel-itm{
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .car-itms{
   /* overflow: hidden;
   position: relative; */
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 300px;
+  margin-top: 10px;
+  animation:  scrollInfinite1 20s infinite;
 }
 .car-itms::after {
   content: "";
@@ -487,26 +494,357 @@ footer {
   z-index: 20;
 }
 .car-itm {
-  /* display: flex; 
-  justify-content: flex-start; */
-  height: 100%;
-  width: 100%;
-  padding-left: 6px;
-  animation:  scrollInfinite1 20s infinite;
+  display: flex; 
+  justify-content: flex-start;
+}
+
+.proskills{
+  border: #c22020 solid 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+
 }
 
 @keyframes scrollInfinite1 {
+  0% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(20%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  #particles-js{height: 100vh;}
+
+  @keyframes scrollInfinite1 {
     0% {
         transform: translateX(0);
     }
     50% {
-        transform: translateX(100%);
+        transform: translateX(10%);
     }
     100% {
         transform: translateX(0);
     }
 }
+}
 
+@media (max-width: 768px) {
+  #particles-js{height: 100vh;}
+  .responsive-heading { font-size: 2.5rem; }
+
+  @keyframes scrollInfinite1 {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(30%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+}
+
+@media (max-width: 480px) {
+  #particles-js{height: 100vh;}
+  .responsive-heading {font-size: 2.5rem !important; ; }
+  .heading-loader, .heading-card{padding: 5px 5px !important; font-size: 1.5rem !important;}
+
+  @keyframes scrollInfinite1 {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(40%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 60px 20px; /* Prevents content from touching edges */
+}
+
+#education {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#education-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Timeline Section */
+.education-container {
+  max-width: 800px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+  border-left: 4px solid #00aaff;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Year & Degree */
+.year {
+  font-weight: bold;
+  color: #00aaff;
+  font-size: 1.3em;
+  background: rgba(0, 170, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.degree {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.institution {
+  color: #4e4c4c;
+  font-size: 1em;
+  margin-top: 3px;
+}
+
+/* Timeline Animation */
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Timeline Dot */
+.dot {
+  position: absolute;
+  left: -12px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  background: #00aaff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.8);
+}
+
+/* Scroll Animation Fix */
+.education-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+#social{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.up {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.down {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.card1 {
+  width: 150px;
+  height: 150px;
+  outline: none;
+  border: none;
+  background: rgb(215, 215, 215);
+  border-radius: 150px 5px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.whatsapp {
+  margin-top: 1.5em;
+  margin-left: 1.2em;
+  fill: #00ff00;
+}
+
+.card2 {
+  width: 150px;
+  height: 150px;
+  outline: none;
+  border: none;
+  background: rgb(215, 215, 215);
+  border-radius: 5px 150px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.linkedin {
+  margin-top: 1.5em;
+  margin-left: -0.9em;
+  fill: #0077b5;
+}
+
+.card3 {
+  width: 150px;
+  height: 150px;
+  outline: none;
+  border: none;
+  background: rgb(215, 215, 215);
+  border-radius: 5px 5px 5px 150px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.github {
+  margin-top: -0.6em;
+  margin-left: 1.2em;
+}
+
+.card4 {
+  width: 150px;
+  height: 150px;
+  padding-left: 30px;
+  outline: none;
+  border: none;
+  background: rgb(215, 215, 215);
+  border-radius: 5px 5px 150px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.facebook {
+  margin-top: 1.5em;
+  margin-left: -.9em;
+  fill: #03A9F4;
+}
+
+.card1:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #00ff00;
+}
+
+.card1:hover .whatsapp {
+  fill: white;
+}
+
+.card2:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #0077b5;
+}
+
+.card2:hover .linkedin {
+  fill: white;
+}
+
+.card3:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: black;
+}
+
+.card3:hover .github {
+  fill: white;
+}
+
+.card4:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #1877f2;
+}
+
+.card4:hover .facebook {
+  fill: white;
+}
+
+
+#certificates-carousel img {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#certificates-carousel button {
+  background-color: #0077b5;
+}
+
+.carousel-item{
+  border: #1877f2 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#accordion img{
+  height: auto;
+  width: 100%;
+
+}
 
 /* .rotating-container {
     width: 100%;
