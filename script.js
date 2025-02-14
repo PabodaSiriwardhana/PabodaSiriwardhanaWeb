@@ -1,12 +1,111 @@
+document.addEventListener("DOMContentLoaded", function () {
+  scrollbarThumb = document.querySelector(".custom-scrollbar-thumb");
+  let isDragging = false;
+  let startY, startScrollY;
+
+  function updateScrollbarThumb() {
+    navbarHeight = document.querySelector(".navbar").offsetHeight;
+    footerHeight = document.querySelector(".footer").offsetHeight;
+
+    var height = document.documentElement.scrollHeight;
+    var maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+
+    // Set thumb height based on content size (minimum height of 50px)
+    thumbHeight = Math.max(50, (window.innerHeight / document.documentElement.scrollHeight) * window.innerHeight);
+    scrollbarThumb.style.height = `${thumbHeight}px`;
+
+    scrollableHeight = window.innerHeight - navbarHeight - footerHeight - thumbHeight;
+
+    // Scroll percentage based on the current scroll position
+    scrollPercentage = (window.scrollY / maxScrollY) * 100;
+
+    // Limit thumb's top position, ensuring it stops at the footer
+    maxThumbTop = window.innerHeight - footerHeight - navbarHeight - thumbHeight;
+    var thumbTop = (scrollableHeight * scrollPercentage) / 100;
+    scrollbarThumb.style.top = `${Math.min(thumbTop, maxThumbTop) + navbarHeight}px`;
+  }
+
+  // Drag start
+  scrollbarThumb.addEventListener("mousedown", (event) => {
+    isDragging = true;
+    startY = event.clientY;
+    startScrollY = window.scrollY;
+    document.body.style.userSelect = "none"; // Prevent text selection
+  });
+
+  // Drag move
+  document.addEventListener("mousemove", (event) => {
+    if (!isDragging) return;
+
+    const deltaY = event.clientY - startY;
+    const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollableHeight = window.innerHeight - navbarHeight - footerHeight - scrollbarThumb.offsetHeight;
+
+    // Correct calculation to match thumb movement with scroll
+    const scrollAmount = (deltaY / scrollableHeight) * maxScrollY;
+    window.scrollTo({ top: startScrollY + scrollAmount, behavior: "instant" });
+
+    updateScrollbarThumb();
+  });
+
+  // Drag end
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+    document.body.style.userSelect = "";
+  });
+
+  // Update scrollbar thumb position on scroll
+  document.addEventListener("scroll", updateScrollbarThumb);
+
+  // Initial update of the scrollbar thumb position
+  updateScrollbarThumb();
+});
+
+
+
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
     });
+  });
 });
+
+function adjustHeadingSize() {
+  headings = document.querySelectorAll('.responsive-heading');
+  words = document.querySelectorAll('.word-next');
+
+  let screenWidth = window.innerWidth;
+
+  if (screenWidth > 1200) {
+    headings.forEach(h => h.style.fontSize = "4rem");
+  } else if (screenWidth > 992) {
+    headings.forEach(h => h.style.fontSize = "3.5rem");
+  } else if (screenWidth > 768) {
+    headings.forEach(h => h.style.fontSize = "3rem");
+  } else {
+    headings.forEach(h => h.style.fontSize = "2.5rem");
+  }
+}
+
+// Run when page loads
+adjustHeadingSize();
+
+// Adjust when window is resized
+window.addEventListener("resize", adjustHeadingSize);
+
+function adjustViewport() {
+  document.getElementById("particles-js").style.width = (window.innerWidth) + "px";
+  document.getElementById("particles-js").style.height = window.innerHeight + "px";
+}
+
+window.addEventListener("resize", adjustViewport);
+window.addEventListener("load", adjustViewport);
+
+
 
 particlesJS("particles-js", {
   "particles": {
@@ -14,13 +113,13 @@ particlesJS("particles-js", {
       "value": 100,
       "density": {
         "enable": true,
-        "value_area":1000
+        "value_area": 1000
       }
     },
     "color": {
       "value": ["#aa73ff", "#f8c210", "#83d238", "#33b1f8"]
     },
-    
+
     "shape": {
       "type": "circle",
       "stroke": {
@@ -105,7 +204,7 @@ particlesJS("particles-js", {
   "retina_detect": true
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("load", handleScroll);
 });
@@ -115,8 +214,8 @@ document.addEventListener("DOMContentLoaded", function() {
 function isElementInViewport(el) {
   var rect = el.getBoundingClientRect();
   return (
-      rect.top < window.innerHeight * 0.75 && 
-      rect.bottom >= 0
+    rect.top < window.innerHeight * 0.75 &&
+    rect.bottom >= 0
   );
 }
 
@@ -131,18 +230,18 @@ function handleScroll() {
   });
 
   // Check for education section items
-  
+
   var container = document.getElementById("education-list");
   var items = document.querySelectorAll(".timeline-item");
 
   if (isElementInViewport(container)) {
-      container.classList.add("visible");
+    container.classList.add("visible");
   }
 
   items.forEach((item) => {
-      if (isElementInViewport(item)) {
-          item.classList.add("visible");
-      }
+    if (isElementInViewport(item)) {
+      item.classList.add("visible");
+    }
   });
 }
 
@@ -150,5 +249,4 @@ function handleScroll() {
 window.addEventListener("scroll", handleScroll);
 window.addEventListener("load", handleScroll);
 
-
-
+document.getElementById("year").textContent = new Date().getFullYear();
