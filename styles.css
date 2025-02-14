@@ -165,69 +165,38 @@ hr{
 
 /* Navbar */
 
-.navbar, .footer{
+.navbar{
   height: 60px !important;
 }
-.navbar {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
 
-.navbar-brand {
-  position: absolute !important;
-  left: 60px !important;
+/* Ensure navbar toggler is properly styled */
+.navbar-toggler {
+  position: absolute;
+  right: 10px;
   top: 10px;
-  margin-bottom: 20px;
-  font-size: rem;
-  font-weight: bold;
-  color: #f8f9fa !important;
-  transition: color 0.3s ease-in-out;
+  padding: 5px 10px;
+  border: none;
+  background: none;
+  outline: none;
 }
 
-.navbar-brand:hover {
-  color: #ffcc00 !important;
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 
-.navbar .collapse {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+/* Adjust icon size */
+.navbar-toggler-icon {
+  width: 1.5em;
+  height: 1.5em;
 }
 
-.navbar .navbar-toggler {
-  position: absolute !important;
-  right: 10px !important;
-  top: 10px;
-}
+/* Navbar menu should collapse properly */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #212529;
+    text-align: center;
+  }
 
-.navbar .container {
-  width: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.navbar ul a {
-  font-size: larger;
-  text-align: center;
-  padding: 10px;
-}
-
-#navbarNav ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #212529;
-  width:100%;
-  padding: 50px 0px 20px 0;
-}
-
-@media screen and (max-width: 768px) {
   .navbar-nav {
     display: flex;
     flex-direction: column;
@@ -236,29 +205,19 @@ hr{
   }
 
   .navbar-nav .nav-item {
-    text-align: center;
     width: 100%;
   }
 
-  .navbar-collapse {
-    text-align: center;
+  .navbar-nav .nav-link {
+    display: block;
+    padding: 10px;
+    width: 100%;
   }
-}
 
-.nav-item{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
-}
-
-.navbar-nav .nav-link {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.7);
-  transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
-  width: 100%;
+  .navbar-nav{
+    margin-top: 10px !important;
+    padding-bottom: 10px;
+  }
 }
 
 .navbar-nav .nav-item:hover {
@@ -269,7 +228,6 @@ hr{
 
 .navbar-nav .nav-item .nav-link.active {
   color: #ffcc00 !important;
-  display: inline;
   font-weight: bold;
   position: relative;
 }
@@ -1316,4 +1274,5 @@ footer {
   background-color: #343a40;
   color: white;
   padding: 20px 0;
+  height: 60px !important;
 }

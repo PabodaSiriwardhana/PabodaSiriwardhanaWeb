@@ -8,13 +8,68 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 2000);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const navbarToggler = document.querySelector(".navbar-toggler");
+  const navbarCollapse = document.querySelector("#navbarNav");
+
+  navbarToggler.addEventListener("click", function () {
+    navbarCollapse.classList.toggle("show");
+  });
+
+  // Hide menu when clicking outside (only in mobile view)
+  document.addEventListener("click", function (event) {
+    if (!navbarToggler.contains(event.target) && !navbarCollapse.contains(event.target)) {
+      navbarCollapse.classList.remove("show");
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+  function updateActiveLink() {
+    let currentSection = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    const documentHeight = document.documentElement.scrollHeight;
+    const viewportHeight = window.innerHeight;
+    const scrollPosition = window.scrollY + viewportHeight;
+
+    if (scrollPosition >= documentHeight-20) {
+      currentSection = "contact"; 
+    }
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+    });
+
+    if (currentSection) {
+      const activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${currentSection}"]`);
+      if (activeLink) {
+        activeLink.classList.add("active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", updateActiveLink);
+
+  updateActiveLink();
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   function toggleCustomScrollbarVisibility() {
     const screenWidth = window.innerWidth || document.documentElement.clientWidth;
     const customScrollbar = document.querySelector(".custom-scrollbar");
 
-    // Hide the custom scrollbar on mobile and tablet devices
     if (screenWidth <= 768) {
       customScrollbar.style.display = "none";
     } else {
@@ -22,10 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Run the function to check visibility on page load
   toggleCustomScrollbarVisibility();
 
-  // Update visibility on window resize
   window.addEventListener('resize', function() {
     toggleCustomScrollbarVisibility();
   });
@@ -44,30 +97,25 @@ document.addEventListener("DOMContentLoaded", function () {
     var height = document.documentElement.scrollHeight;
     var maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
 
-    // Set thumb height based on content size (minimum height of 50px)
     thumbHeight = Math.max(50, (window.innerHeight / document.documentElement.scrollHeight) * window.innerHeight);
     scrollbarThumb.style.height = `${thumbHeight}px`;
 
     scrollableHeight = window.innerHeight - navbarHeight - footerHeight - thumbHeight;
 
-    // Scroll percentage based on the current scroll position
     scrollPercentage = (window.scrollY / maxScrollY) * 100;
 
-    // Limit thumb's top position, ensuring it stops at the footer
     maxThumbTop = window.innerHeight - footerHeight - navbarHeight - thumbHeight;
     var thumbTop = (scrollableHeight * scrollPercentage) / 100;
     scrollbarThumb.style.top = `${Math.min(thumbTop, maxThumbTop) + navbarHeight}px`;
   }
 
-  // Drag start
   scrollbarThumb.addEventListener("mousedown", (event) => {
     isDragging = true;
     startY = event.clientY;
     startScrollY = window.scrollY;
-    document.body.style.userSelect = "none"; // Prevent text selection
+    document.body.style.userSelect = "none";
   });
 
-  // Drag move
   document.addEventListener("mousemove", (event) => {
     if (!isDragging) return;
 
@@ -75,80 +123,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
     const scrollableHeight = window.innerHeight - navbarHeight - footerHeight - scrollbarThumb.offsetHeight;
 
-    // Correct calculation to match thumb movement with scroll
     const scrollAmount = (deltaY / scrollableHeight) * maxScrollY;
     window.scrollTo({ top: startScrollY + scrollAmount, behavior: "instant" });
 
     updateScrollbarThumb();
   });
 
-  // Drag end
   document.addEventListener("mouseup", () => {
     isDragging = false;
     document.body.style.userSelect = "";
   });
 
-  // Update scrollbar thumb position on scroll
   document.addEventListener("scroll", updateScrollbarThumb);
 
-  // Initial update of the scrollbar thumb position
   updateScrollbarThumb();
 });
 
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Get all sections and links
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-
-  // Function to update active link based on scroll position
-  function updateActiveLink() {
-    let currentSection = "";
-
-    // Check the scroll position to determine which section is currently visible
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-
-      // Check if section is in the viewport
-      if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
-        currentSection = section.getAttribute("id");
-      }
-    });
-
-    // Check if we're at the bottom of the document
-    const documentHeight = document.documentElement.scrollHeight;
-    const viewportHeight = window.innerHeight;
-    const scrollPosition = window.scrollY + viewportHeight;
-
-    if (scrollPosition >= documentHeight) {
-      currentSection = "contact"; 
-    }
-
-    // Remove the 'active' class from all links
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-    });
-
-    // Add 'active' class to the correct link
-    if (currentSection) {
-      const activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${currentSection}"]`);
-      if (activeLink) {
-        activeLink.classList.add("active");
-      }
-    }
-  }
-
-  // Update active link on scroll
-  window.addEventListener("scroll", updateActiveLink);
-
-  // Also update active link on page load
-  updateActiveLink();
-});
-
-
-
-// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -175,10 +165,8 @@ function adjustHeadingSize() {
   }
 }
 
-// Run when page loads
 adjustHeadingSize();
 
-// Adjust when window is resized
 window.addEventListener("resize", adjustHeadingSize);
 
 function adjustViewport() {
@@ -188,8 +176,6 @@ function adjustViewport() {
 
 window.addEventListener("resize", adjustViewport);
 window.addEventListener("load", adjustViewport);
-
-
 
 particlesJS("particles-js", {
   "particles": {
@@ -293,8 +279,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("load", handleScroll);
 });
 
-
-// Function to check if an element is in the viewport
 function isElementInViewport(el) {
   var rect = el.getBoundingClientRect();
   return (
@@ -303,17 +287,13 @@ function isElementInViewport(el) {
   );
 }
 
-// Function to add 'visible' class when scrolled into view
 function handleScroll() {
-  // Check for skills section items
   var skillItems = document.querySelectorAll(".skill-item");
   skillItems.forEach((item) => {
     if (isElementInViewport(item)) {
       item.classList.add("visible");
     }
   });
-
-  // Check for education section items
 
   var container = document.getElementById("education-list");
   var items = document.querySelectorAll(".timeline-item");
@@ -329,7 +309,6 @@ function handleScroll() {
   });
 }
 
-// Add scroll event listener
 window.addEventListener("scroll", handleScroll);
 window.addEventListener("load", handleScroll);
 
