@@ -1,4 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const loaderContainer = document.getElementById("loaderContainer");
+
+  loaderContainer.classList.remove("hidden");
+
+  setTimeout(() => {
+    loaderContainer.classList.add("hidden");
+  }, 2000);
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  function toggleCustomScrollbarVisibility() {
+    const screenWidth = window.innerWidth || document.documentElement.clientWidth;
+    const customScrollbar = document.querySelector(".custom-scrollbar");
+
+    // Hide the custom scrollbar on mobile and tablet devices
+    if (screenWidth <= 768) {
+      customScrollbar.style.display = "none";
+    } else {
+      customScrollbar.style.display = "block";
+    }
+  }
+
+  // Run the function to check visibility on page load
+  toggleCustomScrollbarVisibility();
+
+  // Update visibility on window resize
+  window.addEventListener('resize', function() {
+    toggleCustomScrollbarVisibility();
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
   scrollbarThumb = document.querySelector(".custom-scrollbar-thumb");
   let isDragging = false;
   let startY, startScrollY;
@@ -61,6 +95,56 @@ document.addEventListener("DOMContentLoaded", function () {
   updateScrollbarThumb();
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Get all sections and links
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+  // Function to update active link based on scroll position
+  function updateActiveLink() {
+    let currentSection = "";
+
+    // Check the scroll position to determine which section is currently visible
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      // Check if section is in the viewport
+      if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    // Check if we're at the bottom of the document
+    const documentHeight = document.documentElement.scrollHeight;
+    const viewportHeight = window.innerHeight;
+    const scrollPosition = window.scrollY + viewportHeight;
+
+    if (scrollPosition >= documentHeight) {
+      currentSection = "contact"; 
+    }
+
+    // Remove the 'active' class from all links
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+    });
+
+    // Add 'active' class to the correct link
+    if (currentSection) {
+      const activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${currentSection}"]`);
+      if (activeLink) {
+        activeLink.classList.add("active");
+      }
+    }
+  }
+
+  // Update active link on scroll
+  window.addEventListener("scroll", updateActiveLink);
+
+  // Also update active link on page load
+  updateActiveLink();
+});
 
 
 
