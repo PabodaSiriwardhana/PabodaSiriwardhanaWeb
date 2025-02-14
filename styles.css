@@ -169,7 +169,6 @@ hr{
   height: 60px !important;
 }
 
-/* Ensure navbar toggler is properly styled */
 .navbar-toggler {
   position: absolute;
   right: 10px;
@@ -184,13 +183,11 @@ hr{
   box-shadow: none;
 }
 
-/* Adjust icon size */
 .navbar-toggler-icon {
   width: 1.5em;
   height: 1.5em;
 }
 
-/* Navbar menu should collapse properly */
 @media (max-width: 991px) {
   .navbar-collapse {
     background-color: #212529;
