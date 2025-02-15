@@ -151,17 +151,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 function adjustHeadingSize() {
   headings = document.querySelectorAll('.responsive-heading');
   words = document.querySelectorAll('.word-next');
-
+  loaderParagraphs = document.querySelectorAll('.heading-loader p');
   let screenWidth = window.innerWidth;
-
-  if (screenWidth > 1200) {
+  if (screenWidth >= 768) {
     headings.forEach(h => h.style.fontSize = "4rem");
-  } else if (screenWidth > 992) {
-    headings.forEach(h => h.style.fontSize = "3.5rem");
-  } else if (screenWidth > 768) {
+    words.forEach(w => w.style.fontSize = "1.5rem");
+    loaderParagraphs.forEach(p => p.style.fontSize = "1.5rem");
+  }else if (768 > screenWidth >= 480) {
     headings.forEach(h => h.style.fontSize = "3rem");
-  } else {
-    headings.forEach(h => h.style.fontSize = "2.5rem");
+    words.forEach(w => w.style.fontSize = "1rem");
+    loaderParagraphs.forEach(p => p.style.fontSize = "1rem");
+  }else  if (480 > screenWidth) {
+    headings.forEach(h => h.style.fontSize = "2rem");
+    words.forEach(w => w.style.fontSize = "1rem");
+    loaderParagraphs.forEach(p => p.style.fontSize = "1rem");
   }
 }
 
