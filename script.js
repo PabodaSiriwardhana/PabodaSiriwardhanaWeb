@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const viewportHeight = window.innerHeight;
     const scrollPosition = window.scrollY + viewportHeight;
 
-    if (scrollPosition >= documentHeight-20) {
-      currentSection = "contact"; 
+    if (scrollPosition >= documentHeight - 20) {
+      currentSection = "contact";
     }
 
     navLinks.forEach((link) => {
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   toggleCustomScrollbarVisibility();
 
-  window.addEventListener('resize', function() {
+  window.addEventListener('resize', function () {
     toggleCustomScrollbarVisibility();
   });
 });
@@ -311,5 +311,93 @@ function handleScroll() {
 
 window.addEventListener("scroll", handleScroll);
 window.addEventListener("load", handleScroll);
+
+document.querySelectorAll('.accordion-header').forEach(header => {
+  header.addEventListener('click', function () {
+    const collapse = this.nextElementSibling;
+    if (collapse.classList.contains('show')) {
+      collapse.style.maxHeight = null;
+      collapse.style.opacity = '0';
+      setTimeout(() => collapse.classList.remove('show'), 600);
+    } else {
+      collapse.classList.add('show');
+      collapse.style.maxHeight = collapse.scrollHeight + "px";
+      collapse.style.opacity = '1';
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const fullStackCollapse = document.getElementById("collapseFullStack");
+  const fullStackButtonText = document.querySelector("#headingFullStack p");
+
+  // Add the 'show' class to make it visible initially
+  fullStackCollapse.classList.add("show");
+
+  // Update the button text to "Hide Certificate"
+  fullStackButtonText.setAttribute("data-text", "Hide Certificate");
+  setTimeout(() => {
+    fullStackCollapse.style.maxHeight = "none";
+  }, 500);
+  setTimeout(() => {
+    fullStackCollapse.style.opacity = '1';
+  }, 900);
+});
+
+document.querySelectorAll('.accordition-header button').forEach(button => {
+  button.addEventListener('click', function () {
+    const collapse = this.closest('.accordition-card').querySelector('.collapse');
+    const textElement = this.querySelector('p');
+
+    if (collapse.classList.contains('show')) {
+      collapse.style.maxHeight = collapse.scrollHeight + "px";
+      setTimeout(() => {
+        collapse.style.maxHeight = "0";
+        collapse.style.opacity = '0';
+      }, 5);
+      textElement.setAttribute("data-text", "Show Certificate");
+    } else {
+      collapse.style.maxHeight = collapse.scrollHeight + "px";
+      setTimeout(() => {
+        collapse.style.maxHeight = "none";
+      }, 500);
+      setTimeout(() => {
+        collapse.style.opacity = '1';
+      }, 900);
+      textElement.setAttribute("data-text", "Hide Certificate");
+
+
+    }
+  });
+});
+
+document.querySelectorAll('.accordion-header').forEach(header => {
+  header.addEventListener('click', function () {
+    const collapse = this.nextElementSibling;
+    
+    if (collapse.classList.contains('show')) {
+      collapse.style.maxHeight = null;
+      collapse.style.opacity = '0';
+      setTimeout(() => collapse.classList.remove('show'), 600);
+    } else {
+      document.querySelectorAll('.collapse.show').forEach(openCollapse => {
+        openCollapse.style.maxHeight = null;
+        openCollapse.style.opacity = '0';
+        setTimeout(() => openCollapse.classList.remove('show'), 600);
+      });
+
+      collapse.classList.add('show');
+      collapse.style.maxHeight = collapse.scrollHeight + "px";
+      collapse.style.opacity = '1';
+
+      window.requestAnimationFrame(() => {
+        collapse.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      });
+    }
+  });
+});
 
 document.getElementById("year").textContent = new Date().getFullYear();

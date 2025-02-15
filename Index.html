@@ -41,11 +41,11 @@
     </div>
 
     <!-- Navigation Bar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <nav id="navigations" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#particles-js"><img height="35" src="My/Logo.png" alt="Logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navig">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navig">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
@@ -598,405 +598,413 @@
 
     <!-- Education Section -->
     <section id="education" class="bg-light py-5">
+        <div class="container">
+            <h1 class="text-center mb-4">EDUCATION</h1>
+            <div class="education-container" id="education-list">
 
-        <h1 class="text-center mb-4">EDUCATION</h1>
-        <div class="education-container" id="education-list">
+                <div class="timeline">
 
-            <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div class="year">2026</div>
+                        <div class="degree">Bachelor of Information Technology</div>
+                        <div class="institution">University of Colombo School of Computing (Undergraduate)</div>
+                    </div>
 
-                <div class="timeline-item">
-                    <span class="dot"></span>
-                    <div class="year">2026</div>
-                    <div class="degree">Bachelor of Information Technology</div>
-                    <div class="institution">University of Colombo School of Computing (Undergraduate)</div>
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div class="year">2025</div>
+                        <div class="degree">Higher Diploma in Information Technology</div>
+                        <div class="institution">University of Colombo School of Computing (Undergraduate)</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div class="year">2024</div>
+                        <div class="degree">Diploma in Information Technology<br>GPA = 3.69</div>
+                        <div class="institution">University of Colombo School of Computing</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div class="year">2024</div>
+                        <div class="degree">Diploma in Software Engineering</div>
+                        <div class="institution">Developers Stack Academy</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div class="year">2020</div>
+                        <div class="degree">GCE Advanced Level - Physical Science Stream<br>1-B, 1-C, 2-S's</div>
+                        <div class="institution">Dhammissara National School</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div class="year">2016</div>
+                        <div class="degree">GCE Ordinary Level<br>9-A's</div>
+                        <div class="institution">Dhammissara National School</div>
+                    </div>
+
                 </div>
-
-                <div class="timeline-item">
-                    <span class="dot"></span>
-                    <div class="year">2025</div>
-                    <div class="degree">Higher Diploma in Information Technology</div>
-                    <div class="institution">University of Colombo School of Computing (Undergraduate)</div>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="dot"></span>
-                    <div class="year">2024</div>
-                    <div class="degree">Diploma in Information Technology<br>GPA = 3.69</div>
-                    <div class="institution">University of Colombo School of Computing</div>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="dot"></span>
-                    <div class="year">2024</div>
-                    <div class="degree">Diploma in Software Engineering</div>
-                    <div class="institution">Developers Stack Academy</div>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="dot"></span>
-                    <div class="year">2020</div>
-                    <div class="degree">GCE Advanced Level - Physical Science Stream<br>1-B, 1-C, 2-S's</div>
-                    <div class="institution">Dhammissara National School</div>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="dot"></span>
-                    <div class="year">2016</div>
-                    <div class="degree">GCE Ordinary Level<br>9-A's</div>
-                    <div class="institution">Dhammissara National School</div>
-                </div>
-
             </div>
         </div>
+
     </section>
 
     <!-- Certifications Section -->
     <section id="certifications" class="accordion-container">
-        <h1 class="text-center mb-4">CERTIFICATIONS</h1>
-        <hr>
-        <div id="accordion">
+        <div class="container">
+            <h1 class="text-center mb-4">CERTIFICATIONS</h1>
+            <hr>
+            <div id="accordion">
 
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingFullStack">
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingFullStack">
 
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFullStack"
-                        aria-expanded="false" aria-controls="collapseFullStack">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="Full Stack Web Development"></p>
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFullStack"
+                            aria-expanded="false" aria-controls="collapseFullStack">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="Full Stack Web Development"></p>
+                        </button>
 
-                    </button>
-
+                    </div>
+                    <div id="collapseFullStack" class="collapse show" aria-labelledby="headingFullStack"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/Full Stack Web Development.png" class="d-block"
+                                alt="Full Stack Web Development Certificate">
+                        </div>
+                    </div>
                 </div>
-                <div id="collapseFullStack" class="collapse show" aria-labelledby="headingFullStack"
-                    data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/Full Stack Web Development.png" class="d-block"
-                            alt="Full Stack Web Development Certificate">
+
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingWordPress">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseWordPress"
+                            aria-expanded="false" aria-controls="collapseWordPress">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="WordPress Web Development"></p>
+
+                        </button>
+
+                    </div>
+                    <div id="collapseWordPress" class="collapse" aria-labelledby="headingWordPress"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/WordPress Web Development.png" class="d-block"
+                                alt="WordPress Web Development Certificate">
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingServerSide">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseServerSide"
+                            aria-expanded="false" aria-controls="collapseServerSide">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="Server-side Web Programming"></p>
+
+                        </button>
+
+                    </div>
+                    <div id="collapseServerSide" class="collapse" aria-labelledby="headingServerSide"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/Server-side Web Programming.png" class="d-block"
+                                alt="Server-side Web Programming Certificate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingFrontEnd">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFrontEnd"
+                            aria-expanded="false" aria-controls="collapseFrontEnd">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="Front-End Web Development"></p>
+
+                        </button>
+                    </div>
+                    <div id="collapseFrontEnd" class="collapse" aria-labelledby="headingFrontEnd"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/Front-End Web Development.png" class="d-block"
+                                alt="Front-End Web Development Certificate">
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingWebDesign">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseWebDesign"
+                            aria-expanded="false" aria-controls="collapseWebDesign">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="Web Design for Beginners"></p>
+
+                        </button>
+
+                    </div>
+                    <div id="collapseWebDesign" class="collapse" aria-labelledby="headingWebDesign"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/Web Design for Beginners.png" class="d-block"
+                                alt="Web Design for Beginners Certificate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingAngular">
+
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseAngular"
+                            aria-expanded="false" aria-controls="collapseAngular">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="Angular"></p>
+                        </button>
+                    </div>
+                    <div id="collapseAngular" class="collapse" aria-labelledby="headingAngular"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/Angular.png" class="d-block" alt="Angular Certificate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingJavaIntermediate">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                            data-target="#collapseJavaIntermediate" aria-expanded="false"
+                            aria-controls="collapseJavaIntermediate">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="Java Intermediate"></p>
+
+                        </button>
+
+                    </div>
+                    <div id="collapseJavaIntermediate" class="collapse" aria-labelledby="headingJavaIntermediate"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/Java Intermediate.png" class="d-block"
+                                alt="Java Intermediate Certificate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingJava">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseJava"
+                            aria-expanded="false" aria-controls="collapseJava">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="Introduction to Java"></p>
+                        </button>
+                    </div>
+                    <div id="collapseJava" class="collapse" aria-labelledby="headingJava" data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/Introduction to Java.png" class="d-block"
+                                alt="Introduction to Java Certificate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingCSharpIntermediate">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                            data-target="#collapseCSharpIntermediate" aria-expanded="false"
+                            aria-controls="collapseCSharpIntermediate">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="C# Intermediate"></p>
+
+                        </button>
+
+                    </div>
+                    <div id="collapseCSharpIntermediate" class="collapse" aria-labelledby="headingCSharpIntermediate"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/CSharp Intermediate.png" class="d-block"
+                                alt="C# Intermediate Certificate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingCSharp">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseCSharp"
+                            aria-expanded="false" aria-controls="collapseCSharp">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="Introduction to C#"></p>
+
+                        </button>
+                    </div>
+                    <div id="collapseCSharp" class="collapse" aria-labelledby="headingCSharp" data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/Introduction to CSharp.png" class="d-block"
+                                alt="Introduction to C# Certificate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingJavaScriptIntermediate">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                            data-target="#collapseJavaScriptIntermediate" aria-expanded="false"
+                            aria-controls="collapseJavaScriptIntermediate">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="JavaScript Intermediate"></p>
+
+                        </button>
+
+                    </div>
+                    <div id="collapseJavaScriptIntermediate" class="collapse"
+                        aria-labelledby="headingJavaScriptIntermediate" data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/JavaScript Intermediate.png" class="d-block"
+                                alt="JavaScript Intermediate Certificate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingJavaScript">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseJavaScript"
+                            aria-expanded="false" aria-controls="collapseJavaScript">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="Introduction to JavaScript"></p>
+
+                        </button>
+
+                    </div>
+                    <div id="collapseJavaScript" class="collapse" aria-labelledby="headingJavaScript"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/Introduction to JavaScript.png" class="d-block"
+                                alt="Introduction to JavaScript Certificate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingPythonBeginners">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                            data-target="#collapsePythonBeginners" aria-expanded="false"
+                            aria-controls="collapsePythonBeginners">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="Python for Beginners"></p>
+
+                        </button>
+
+                    </div>
+                    <div id="collapsePythonBeginners" class="collapse" aria-labelledby="headingPythonBeginners"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/Python for Beginners.png" class="d-block"
+                                alt="Python for Beginners Certificate">
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingCIntermediate">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                            data-target="#collapseCIntermediate" aria-expanded="false"
+                            aria-controls="collapseCIntermediate">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="C Intermediate"></p>
+                        </button>
+
+                    </div>
+                    <div id="collapseCIntermediate" class="collapse" aria-labelledby="headingCIntermediate"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/C Intermediate.png" class="d-block" alt="C Intermediate Certificate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingC">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseC"
+                            aria-expanded="false" aria-controls="collapseC">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="Introduction to C"></p>
+
+                        </button>
+                    </div>
+                    <div id="collapseC" class="collapse" aria-labelledby="headingC" data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/Introduction to C.png" class="d-block"
+                                alt="Introduction to C Certificate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingFullStack">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseASPNet"
+                            aria-expanded="false" aria-controls="collapseASPNet">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="Introduction to ASP.Net"></p>
+                        </button>
+                    </div>
+                    <div id="collapseASPNet" class="collapse" aria-labelledby="headingASPNet" data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/Introduction to ASP.Net.png" class="d-block"
+                                alt="Introduction to ASP.Net Certificate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingCyberSecurity">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                            data-target="#collapseCyberSecurity" aria-expanded="false"
+                            aria-controls="collapseCyberSecurity">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="Cyber Security Course (CYC+)"></p>
+
+                        </button>
+
+                    </div>
+                    <div id="collapseCyberSecurity" class="collapse" aria-labelledby="headingCyberSecurity"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/Cyber Security Course (CYC+).png" class="d-block"
+                                alt="Cyber Security Course (CYC+) Certificate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow accordition-card">
+                    <div class="card-header accordition-header" id="headingEthicalHacking">
+
+                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                            data-target="#collapseEthicalHacking" aria-expanded="false"
+                            aria-controls="collapseEthicalHacking">
+                            <span></span>
+                            <p data-text="Show Certificate" data-title="Ethical Hacking Workshop"></p>
+
+                        </button>
+
+                    </div>
+                    <div id="collapseEthicalHacking" class="collapse" aria-labelledby="headingEthicalHacking"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <img src="Certificates/Ethical Hacking Workshop.png" class="d-block"
+                                alt="Ethical Hacking Workshop Certificate">
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingWordPress">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseWordPress"
-                        aria-expanded="false" aria-controls="collapseWordPress">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="WordPress Web Development"></p>
-
-                    </button>
-
-                </div>
-                <div id="collapseWordPress" class="collapse" aria-labelledby="headingWordPress"
-                    data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/WordPress Web Development.png" class="d-block"
-                            alt="WordPress Web Development Certificate">
-                    </div>
-                </div>
-            </div>
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingServerSide">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseServerSide"
-                        aria-expanded="false" aria-controls="collapseServerSide">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="Server-side Web Programming"></p>
-
-                    </button>
-
-                </div>
-                <div id="collapseServerSide" class="collapse" aria-labelledby="headingServerSide"
-                    data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/Server-side Web Programming.png" class="d-block"
-                            alt="Server-side Web Programming Certificate">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingFrontEnd">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFrontEnd"
-                        aria-expanded="false" aria-controls="collapseFrontEnd">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="Front-End Web Development"></p>
-
-                    </button>
-                </div>
-                <div id="collapseFrontEnd" class="collapse" aria-labelledby="headingFrontEnd" data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/Front-End Web Development.png" class="d-block"
-                            alt="Front-End Web Development Certificate">
-                    </div>
-                </div>
-            </div>
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingWebDesign">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseWebDesign"
-                        aria-expanded="false" aria-controls="collapseWebDesign">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="Web Design for Beginners"></p>
-
-                    </button>
-
-                </div>
-                <div id="collapseWebDesign" class="collapse" aria-labelledby="headingWebDesign"
-                    data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/Web Design for Beginners.png" class="d-block"
-                            alt="Web Design for Beginners Certificate">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingAngular">
-
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseAngular"
-                        aria-expanded="false" aria-controls="collapseAngular">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="Angular"></p>
-                    </button>
-                </div>
-                <div id="collapseAngular" class="collapse" aria-labelledby="headingAngular" data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/Angular.png" class="d-block" alt="Angular Certificate">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingJavaIntermediate">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse"
-                        data-target="#collapseJavaIntermediate" aria-expanded="false"
-                        aria-controls="collapseJavaIntermediate">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="Java Intermediate"></p>
-
-                    </button>
-
-                </div>
-                <div id="collapseJavaIntermediate" class="collapse" aria-labelledby="headingJavaIntermediate"
-                    data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/Java Intermediate.png" class="d-block"
-                            alt="Java Intermediate Certificate">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingJava">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseJava"
-                        aria-expanded="false" aria-controls="collapseJava">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="Introduction to Java"></p>
-                    </button>
-                </div>
-                <div id="collapseJava" class="collapse" aria-labelledby="headingJava" data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/Introduction to Java.png" class="d-block"
-                            alt="Introduction to Java Certificate">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingCSharpIntermediate">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse"
-                        data-target="#collapseCSharpIntermediate" aria-expanded="false"
-                        aria-controls="collapseCSharpIntermediate">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="C# Intermediate"></p>
-
-                    </button>
-
-                </div>
-                <div id="collapseCSharpIntermediate" class="collapse" aria-labelledby="headingCSharpIntermediate"
-                    data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/CSharp Intermediate.png" class="d-block"
-                            alt="C# Intermediate Certificate">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingCSharp">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseCSharp"
-                        aria-expanded="false" aria-controls="collapseCSharp">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="Introduction to C#"></p>
-
-                    </button>
-                </div>
-                <div id="collapseCSharp" class="collapse" aria-labelledby="headingCSharp" data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/Introduction to CSharp.png" class="d-block"
-                            alt="Introduction to C# Certificate">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingJavaScriptIntermediate">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse"
-                        data-target="#collapseJavaScriptIntermediate" aria-expanded="false"
-                        aria-controls="collapseJavaScriptIntermediate">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="JavaScript Intermediate"></p>
-
-                    </button>
-
-                </div>
-                <div id="collapseJavaScriptIntermediate" class="collapse"
-                    aria-labelledby="headingJavaScriptIntermediate" data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/JavaScript Intermediate.png" class="d-block"
-                            alt="JavaScript Intermediate Certificate">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingJavaScript">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseJavaScript"
-                        aria-expanded="false" aria-controls="collapseJavaScript">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="Introduction to JavaScript"></p>
-
-                    </button>
-
-                </div>
-                <div id="collapseJavaScript" class="collapse" aria-labelledby="headingJavaScript"
-                    data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/Introduction to JavaScript.png" class="d-block"
-                            alt="Introduction to JavaScript Certificate">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingPythonBeginners">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsePythonBeginners"
-                        aria-expanded="false" aria-controls="collapsePythonBeginners">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="Python for Beginners"></p>
-
-                    </button>
-
-                </div>
-                <div id="collapsePythonBeginners" class="collapse" aria-labelledby="headingPythonBeginners"
-                    data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/Python for Beginners.png" class="d-block"
-                            alt="Python for Beginners Certificate">
-                    </div>
-                </div>
-            </div>
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingCIntermediate">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseCIntermediate"
-                        aria-expanded="false" aria-controls="collapseCIntermediate">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="C Intermediate"></p>
-                    </button>
-
-                </div>
-                <div id="collapseCIntermediate" class="collapse" aria-labelledby="headingCIntermediate"
-                    data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/C Intermediate.png" class="d-block" alt="C Intermediate Certificate">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingC">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseC"
-                        aria-expanded="false" aria-controls="collapseC">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="Introduction to C"></p>
-
-                    </button>
-                </div>
-                <div id="collapseC" class="collapse" aria-labelledby="headingC" data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/Introduction to C.png" class="d-block"
-                            alt="Introduction to C Certificate">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingFullStack">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseASPNet"
-                        aria-expanded="false" aria-controls="collapseASPNet">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="Introduction to ASP.Net"></p>
-                    </button>
-                </div>
-                <div id="collapseASPNet" class="collapse" aria-labelledby="headingASPNet" data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/Introduction to ASP.Net.png" class="d-block"
-                            alt="Introduction to ASP.Net Certificate">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingCyberSecurity">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseCyberSecurity"
-                        aria-expanded="false" aria-controls="collapseCyberSecurity">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="Cyber Security Course (CYC+)"></p>
-
-                    </button>
-
-                </div>
-                <div id="collapseCyberSecurity" class="collapse" aria-labelledby="headingCyberSecurity"
-                    data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/Cyber Security Course (CYC+).png" class="d-block"
-                            alt="Cyber Security Course (CYC+) Certificate">
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow accordition-card">
-                <div class="card-header accordition-header" id="headingEthicalHacking">
-
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEthicalHacking"
-                        aria-expanded="false" aria-controls="collapseEthicalHacking">
-                        <span></span>
-                        <p data-text="Show Certificate" data-title="Ethical Hacking Workshop"></p>
-
-                    </button>
-
-                </div>
-                <div id="collapseEthicalHacking" class="collapse" aria-labelledby="headingEthicalHacking"
-                    data-parent="#accordion">
-                    <div class="card-body">
-                        <img src="Certificates/Ethical Hacking Workshop.png" class="d-block"
-                            alt="Ethical Hacking Workshop Certificate">
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
